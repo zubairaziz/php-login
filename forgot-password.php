@@ -1,5 +1,5 @@
 <?php
-require_once('includes/db.php');
+require_once('includes/db-connect.php');
 require('includes/php-mailer-autoload.php');
 ?>
 
@@ -7,7 +7,7 @@ require('includes/php-mailer-autoload.php');
 <html lang="en">
 
 <head>
-    <title></title>
+    <title>PASSWORD RETRIEVAL | PHP Simple registration & login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel="stylesheet">
@@ -72,7 +72,7 @@ require('includes/php-mailer-autoload.php');
             <button class="btn btn-lg btn-primary btn-block" type="submit">Forgot Password</button>
         </form>
 
-    <?php
+        <?php
         if (isset($_POST) & !empty($_POST)) {
         $username = mysqli_real_escape_string($connect, $_POST['username']);
         $query = "SELECT * FROM `users` WHERE username='$username'";
@@ -101,13 +101,19 @@ require('includes/php-mailer-autoload.php');
     <footer class="bg-dark pt-3 pb-3">
         <div class="container">
             <div class="text-muted">
-                <h3>Contact us <a href="contact.php">here</a></h3>
+                <h3>Contact us
+                    <a href="contact.php">here</a>
+                </h3>
             </div>
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
